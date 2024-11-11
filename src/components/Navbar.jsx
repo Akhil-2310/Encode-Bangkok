@@ -1,6 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate()
+    function start() {
+      navigate("/identity");
+    }
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -50,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <button className="btn" onClick={start}>Button</button>
         </div>
       </div>
     </div>

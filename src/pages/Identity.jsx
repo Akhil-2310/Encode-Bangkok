@@ -1,20 +1,35 @@
 import React from 'react'
 import { Identity } from "@semaphore-protocol/identity";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Identity = () => {
+const IdentityPage = () => {
+
+const navigate = useNavigate()
+const [identity, setIdentity] = useState("");
+
 const generateIdentity = () => {
-  const identity = new Identity();
-  const identityString = identity.commitment.toString();
-  localStorage.setItem("semaphoreIdentity", identityString);
-  alert("Semaphore Identity Created");
+     if (!identity) {
+       const newIdentity = new Identity();
+       const identityString = newIdentity.commitment.toString();
+       localStorage.setItem("semaphoreIdentity", identityString);
+       console.log(identityString);
+       setIdentity(identityString);
+       alert("Semaphore Identity Created", identityString);
+     } else {
+       alert("Identity already exists.");
+     }
+  
+  
+  navigate("/create")
 };
 
-useEffect(() => {
-  const savedIdentity = localStorage.getItem("semaphoreIdentity");
-  if (!savedIdentity) {
-    generateIdentity();
-  }
-}, []);
+// useEffect(() => {
+//   const savedIdentity = localStorage.getItem("semaphoreIdentity");
+//   if (!savedIdentity) {
+//     generateIdentity();
+//   }
+// }, []);
 
   return (
     <div>
@@ -29,4 +44,4 @@ useEffect(() => {
   );
 }
 
-export default Identity
+export default IdentityPage
