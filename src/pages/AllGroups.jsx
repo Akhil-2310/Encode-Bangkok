@@ -8,6 +8,7 @@ const AllGroups = () => {
 const apiSdk = new ApiSdk()
 
   const [groups, setGroups] = useState([]);
+   const [identity, setIdentity] = useState(null);
   const [inviteCode, setInviteCode] = useState("");
   const [selectedMemberId, setSelectedMemberId] = useState("");
   const apiKey = "0925b7bc-ef61-436d-a587-57328b19b814";
@@ -26,6 +27,9 @@ const apiSdk = new ApiSdk()
 
     fetchGroups();
   }, []);
+
+
+
 
   const handleJoinWithInviteCode = async (groupId) => {
     try {
@@ -111,14 +115,14 @@ const apiSdk = new ApiSdk()
                 </div>
 
                 {/* Join via API Key */}
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <button
                     onClick={() => handleJoinWithApiKey(group.id)}
                     className="bg-green-500 text-white p-2 rounded"
                   >
                     Join with API Key
                   </button>
-                </div>
+                </div> */}
               </li>
             ))}
           </ul>

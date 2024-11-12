@@ -24,12 +24,12 @@ const generateIdentity = () => {
   navigate("/create")
 };
 
-// useEffect(() => {
-//   const savedIdentity = localStorage.getItem("semaphoreIdentity");
-//   if (!savedIdentity) {
-//     generateIdentity();
-//   }
-// }, []);
+useEffect(() => {
+  const savedIdentity = localStorage.getItem("semaphoreIdentity");
+  if (!savedIdentity) {
+    generateIdentity();
+  }
+}, []);
 
   return (
     <div>

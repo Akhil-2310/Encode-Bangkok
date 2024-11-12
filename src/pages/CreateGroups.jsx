@@ -45,7 +45,7 @@ const CreateGroups = () => {
      const response = await apiSdk.createGroup(groupCreateDetails, apiKey);
      console.log("Group created:", response);
      alert("Group created successfully!");
-     navigate()
+     navigate("/all")
    } catch (error) {
      console.error("Error creating group:", error);
    }
