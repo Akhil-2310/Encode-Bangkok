@@ -1,9 +1,12 @@
 import React from 'react'
 import { ApiSdk } from "@bandada/api-sdk";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateGroups = () => {
+
+    const navigate = useNavigate()
 
     const apiSdk = new ApiSdk();
     const [name, setName] = useState("");
@@ -42,7 +45,7 @@ const CreateGroups = () => {
      const response = await apiSdk.createGroup(groupCreateDetails, apiKey);
      console.log("Group created:", response);
      alert("Group created successfully!");
-     // Redirect to AllGroupsPage or display success message
+     navigate()
    } catch (error) {
      console.error("Error creating group:", error);
    }
