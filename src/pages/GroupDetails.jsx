@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ProposalVoting from "./ProposalVoting";
 
 function GroupDetails() {
 
@@ -62,6 +63,7 @@ function GroupDetails() {
       ) : (
         <p>No group details available.</p>
       )}
+      <ProposalVoting/>
     </div>
   );
 }
