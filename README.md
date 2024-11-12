@@ -2,6 +2,9 @@
 - Privacy has become a myth nowadays and you're getting monitored everywhere. So, this is a next gen social app which focuses on privacy. 
 - Here, you get to meet like minded people without revealing your original identity. You can be a part of a group who all focus on one topic. 
 
+## Demo Video
+[Demo](https://www.loom.com/share/35d897e6c5b8426f82e3c2a527b595ab)
+
 ## How does it work?
 - First, ypu get a [semaphore](https://docs.semaphore.pse.dev/guides/identities) identity.
 - Then you have to create a group. You get a choice to create a group based on some credntials. That credentials can be twitter or github followers. 
