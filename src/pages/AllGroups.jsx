@@ -1,9 +1,12 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { ApiSdk } from "@bandada/api-sdk";
+import { useNavigate } from 'react-router-dom';
 
 const AllGroups = () => {
 
+
+  const navigate = useNavigate()
     
 const apiSdk = new ApiSdk()
 
@@ -63,6 +66,10 @@ const apiSdk = new ApiSdk()
     }
   };
 
+  const handleViewGroup = (groupId) => {
+    navigate(`/group/${groupId}`);
+  };
+
   return (
     <>
       <div className="p-4">
@@ -78,8 +85,7 @@ const apiSdk = new ApiSdk()
                     Credential:{" "}
                     {group.credentials.id?.replace("_", " ") || "N/A"} - Min
                     Requirement:{" "}
-                    {group.credentials.criteria?.minFollowers ||
-                      "N/A"}
+                    {group.credentials.criteria?.minFollowers || "N/A"}
                   </p>
                 ) : (
                   <p className="text-sm text-gray-600 mt-2">
@@ -96,6 +102,13 @@ const apiSdk = new ApiSdk()
                 >
                   Join via Bandada Link
                 </a>
+
+                <button
+                  onClick={() => handleViewGroup(group.id)}
+                  className="bg-blue-500 text-white p-2 rounded mt-4"
+                >
+                  View Group Details
+                </button>
 
                 {/* Join via Invite Code */}
                 <div className="mt-4">

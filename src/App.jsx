@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import IdentityPage from "./pages/Identity";
 import AllGroups from "./pages/AllGroups";
+import GroupDetails from "./pages/GroupDetails";
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/identity" element={<IdentityPage />} />
           <Route path="/create" element={<CreateGroups />} />
-          <Route path="/all" element={<AllGroups/>} />
+          <Route path="/all" element={<AllGroups />} />
+          <Route path="/group/:groupId" element={<GroupDetails />} />
         </Routes>
       </Router>
     </>
